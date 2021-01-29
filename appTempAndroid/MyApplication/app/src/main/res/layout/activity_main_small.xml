@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/btnUpdate2"
+        android:layout_width="370dp"
+        android:layout_height="62dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/measuredTime2"
+        app:srcCompat="@drawable/updatebtn" />
+
+    <TextView
+        android:id="@+id/measuredTime2"
+        android:layout_width="356dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/bungee_hairline"
+        android:gravity="center"
+        android:text="MEASURED \n00:00 \n00/00/0000"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title2" />
+
+    <ImageView
+        android:id="@+id/iconTemp2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/iconHumidity2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpdate2"
+        app:srcCompat="@drawable/thermometer_cold" />
+
+    <TextView
+        android:id="@+id/txtHumidity2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bungee_hairline"
+        android:gravity="center"
+        android:text="HUMIDITY"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtTemperature2"
+        app:layout_constraintTop_toBottomOf="@+id/iconHumidity2" />
+
+    <TextView
+        android:id="@+id/txtTemperature2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bungee_hairline"
+        android:gravity="center"
+        android:text="TEMPERATURE"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/txtHumidity2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iconTemp2" />
+
+    <ImageView
+        android:id="@+id/iconHumidity2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iconTemp2"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpdate2"
+        app:srcCompat="@drawable/weather_humidity_icon__1" />
+
+    <TextView
+        android:id="@+id/temp"
+        android:layout_width="175dp"
+        android:layout_height="100dp"
+        android:background="@drawable/my_border"
+        android:fontFamily="@font/bungee"
+        android:gravity="center"
+        android:text="XX °C"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="50dp"
+
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="352dp" />
+
+    <TextView
+        android:id="@+id/title2"
+        android:layout_width="369dp"
+        android:layout_height="128dp"
+
+
+        android:fontFamily="@font/bungee"
+        android:gravity="center"
+        android:paddingTop="0dp"
+        android:text="HOME \nSENSORS"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="74dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

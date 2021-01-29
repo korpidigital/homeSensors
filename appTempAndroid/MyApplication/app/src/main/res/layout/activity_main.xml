@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="74dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/smallMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/smallmenu" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/menuLines"
+        android:layout_width="wrap_content"
+        android:layout_height="74dp"
+        android:layout_marginLeft="7dp"
+        android:src="@drawable/group_11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/menuMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="74dp"
+        app:layout_constraintEnd_toStartOf="@+id/menuGraph"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pen_black_diagonal_symbol_of_writing_tool_icon_icons_com_54470" />
+
+    <ImageView
+        android:id="@+id/menuSettings"
+        android:layout_width="59dp"
+        android:layout_height="72dp"
+        app:layout_constraintEnd_toStartOf="@+id/menuHide"
+
+        app:layout_constraintStart_toEndOf="@+id/menuHome"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/settings_cogwheel_button_icon_icons_com_72559" />
+
+    <ImageView
+        android:id="@+id/menuHide"
+        android:layout_width="66dp"
+        android:layout_height="84dp"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toEndOf="@+id/menuSettings"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/asset1" />
+
+    <ImageView
+        android:id="@+id/menuHome"
+        android:layout_width="wrap_content"
+        android:layout_height="74dp"
+        app:layout_constraintEnd_toStartOf="@+id/menuSettings"
+        app:layout_constraintStart_toEndOf="@+id/menuGraph"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home_button_icon_icons_com_72700" />
+
+    <ImageView
+        android:id="@+id/menuGraph"
+        android:layout_width="wrap_content"
+        android:layout_height="74dp"
+        app:layout_constraintEnd_toStartOf="@+id/menuHome"
+        app:layout_constraintStart_toEndOf="@+id/menuMessage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/path_15" />
+
+    <TextView
+        android:id="@+id/measuredTime"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:fontFamily="@font/bungee_hairline"
+        android:gravity="center"
+        android:text="MEASURED \n00:00 \n00/00/0000"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title1"
+        android:includeFontPadding="false"/>
+
+    <ImageView
+        android:id="@+id/btnUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/measuredTime"
+        app:srcCompat="@drawable/updatebtn" />
+
+
+    <TextView
+        android:id="@+id/txtHumidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bungee_hairline"
+        android:gravity="center"
+        android:text="HUMIDITY"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/iconHumidity"
+        app:layout_constraintStart_toStartOf="@+id/iconHumidity"
+        app:layout_constraintTop_toBottomOf="@+id/iconHumidity"
+        />
+
+    <TextView
+        android:id="@+id/txtTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bungee_hairline"
+        android:gravity="center"
+        android:text="TEMPERATURE"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/iconTemp"
+        app:layout_constraintStart_toStartOf="@+id/iconTemp"
+        app:layout_constraintTop_toBottomOf="@+id/iconTemp" />
+
+    <ImageView
+        android:id="@+id/iconHumidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/iconTemp"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpdate"
+        app:srcCompat="@drawable/weather_humidity_icon__1" />
+
+    <ImageView
+        android:id="@+id/iconTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/iconHumidity"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpdate"
+        app:srcCompat="@drawable/thermometer_cold" />
+
+    <TextView
+        android:id="@+id/hum1"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/my_border"
+        android:fontFamily="@font/bungee"
+        android:gravity="center"
+        android:text="XX %"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/temp1"
+        app:layout_constraintTop_toBottomOf="@+id/txtHumidity"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="40sp"
+        android:autoSizeMaxTextSize="50sp"
+        android:autoSizeStepGranularity="2sp"/>
+
+    <TextView
+        android:id="@+id/temp1"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+
+        android:background="@drawable/my_border"
+        android:fontFamily="@font/bungee"
+        android:gravity="center"
+        android:text="XX °C"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/hum1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTemperature"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="40sp"
+        android:autoSizeMaxTextSize="50sp"
+        android:autoSizeStepGranularity="2sp"/>
+
+    <TextView
+        android:id="@+id/temp2"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+
+        android:background="@drawable/my_border"
+        android:fontFamily="@font/bungee"
+        android:gravity="center"
+        android:text="XX °C"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/hum2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temp1"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="40sp"
+        android:autoSizeMaxTextSize="50sp"
+        android:autoSizeStepGranularity="2sp"/>
+
+    <TextView
+        android:id="@+id/hum2"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/my_border"
+        android:fontFamily="@font/bungee"
+        android:gravity="center"
+        android:text="XX %"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/temp2"
+        app:layout_constraintTop_toBottomOf="@+id/hum1"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="40sp"
+        android:autoSizeMaxTextSize="50sp"
+        android:autoSizeStepGranularity="2sp"/>
+
+    <TextView
+        android:id="@+id/valueBox5"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:background="@drawable/my_border"
+
+        android:fontFamily="@font/bungee"
+        android:gravity="center"
+        android:text="XX °C"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/valueBox6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temp2"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="40sp"
+        android:autoSizeMaxTextSize="50sp"
+        android:autoSizeStepGranularity="2sp"/>
+
+    <TextView
+        android:id="@+id/valueBox6"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/my_border"
+        android:fontFamily="@font/bungee"
+        android:gravity="center"
+        android:text="XX %"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/valueBox5"
+        app:layout_constraintTop_toBottomOf="@+id/hum2"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="40sp"
+        android:autoSizeMaxTextSize="50sp"
+        android:autoSizeStepGranularity="2sp"/>
+
+    <TextView
+        android:id="@+id/txtroom3"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginBottom="60dp"
+        android:fontFamily="@font/bungee_hairline"
+        android:gravity="start"
+        android:text="ROOM3"
+        android:textAlignment="viewStart"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/valueBox5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temp2"
+        app:layout_constraintVertical_bias="0.0"
+        android:includeFontPadding="false"/>
+
+    <TextView
+        android:id="@+id/txtroom1"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginBottom="43dp"
+        android:autoSizeMaxTextSize="25sp"
+        android:autoSizeMinTextSize="10sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/bungee_hairline"
+        android:gravity="start"
+        android:text="ROOM1"
+        android:textAlignment="viewStart"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/temp1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/temp1"
+        android:includeFontPadding="false"/>
+
+    <TextView
+        android:id="@+id/txtroom2"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/bungee_hairline"
+        android:gravity="start"
+        android:text="OUT"
+        android:textAlignment="viewStart"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/temp2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temp1"
+        app:layout_constraintVertical_bias="0.0"
+        android:includeFontPadding="false"/>
+
+    <TextView
+        android:id="@+id/title1"
+        android:layout_width="0dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="15dp"
+        android:autoSizeMaxTextSize="60sp"
+        android:autoSizeMinTextSize="40sp"
+
+
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/bungee"
+        android:gravity="top|center_horizontal"
+        android:includeFontPadding="false"
+        android:paddingTop="0dp"
+        android:text="HOME \nSENSORS"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/measuredTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

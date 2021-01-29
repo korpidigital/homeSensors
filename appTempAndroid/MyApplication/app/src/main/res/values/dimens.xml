@@ -1,0 +1,13 @@
+<resources>
+    <!-- Small Dimensions = "Medium Dimensions * 0.75" For Example: 210*.75 = 157.5-->
+    <dimen name = "button1_width_small">157.5dip</dimen>
+
+    <!-- Medium Dimensions -->
+    <dimen name = "button1_width_medium">210dip</dimen>
+
+    <!-- Large Dimensions = "Medium Dimensions * 1.5" For Example: 210*1.5 = 315 -->
+    <dimen name = "button1_width_large">315dip</dimen>
+
+    <!-- XLarge Dimensions = "Medium Dimensions * 2" For Example: 210*1.5 = 420 -->
+    <dimen name = "button1_width_xLarge">420dip</dimen>
+</resources>
