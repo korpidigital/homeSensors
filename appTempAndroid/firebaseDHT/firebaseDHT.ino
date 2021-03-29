@@ -8,12 +8,11 @@
 #include <WiFiUdp.h>
 
 
-#define FIREBASE_HOST "android-app-home-default-rtdb.europe-west1.firebasedatabase.app/" //Without http:// or https:// schemes
-#define FIREBASE_AUTH "YFWf3Adm1gmu9pe4znOO3mjoYe2nT7udVren5BQs"
+#define FIREBASE_HOST "hostname" //Without http:// or https:// schemes
+#define FIREBASE_AUTH "auth"
 #define WIFI_SSID "DNA-WELHO-B282"
-#define WIFI_PASSWORD "9F37F6C3C3"
-//#define WIFI_SSID "korpi_9"
-//#define WIFI_PASSWORD "22222222"
+#define WIFI_PASSWORD "pass"
+
 
 #define DHTPIN D1    // Connect Data pin of DHT to D2
 int led = D5;     // Connect LED to D5
