@@ -9,7 +9,6 @@ import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import androidx.core.widget.doAfterTextChanged
-import com.example.tempapp.databinding.ActivityMainBinding
 import com.example.tempapp.databinding.ActivitySettingsBinding
 import com.google.firebase.database.*
 
@@ -18,7 +17,6 @@ import com.google.firebase.database.*
 class activity_settings : AppCompatActivity() {
 
     private val TAG = "MyActivity"
-    var menuOpen: Boolean = false
     private lateinit var ui: ActivitySettingsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,15 +28,11 @@ class activity_settings : AppCompatActivity() {
 
         ui.settingsInput1.setText(sensor.name1)
         ui.settingsInput2.setText(sensor.name2)
+        Log.d(TAG, sensor.name1.toString())
+        Log.d(TAG, sensor.name2.toString())
 
-        val bundle=intent.extras
-        if(bundle!=null)
-        {
-            menuOpen = bundle.getBoolean("menuOpen")
-            sensor.t1 = bundle.getLong("temp1")
-            sensor.h1 = bundle.getLong("hum1")
-        }
-        if (menuOpen){
+
+        if (data.menuOpen){
             menuOpen()
         }
 
@@ -53,6 +47,15 @@ class activity_settings : AppCompatActivity() {
         ui.menuHome.setOnClickListener(){
             Log.d(TAG, "click home")
             val intent = Intent(this, MainActivity::class.java)
+            changeView.saveOnChange(intent)
+            startActivity(intent)
+            this.overridePendingTransition(0, 0);
+            finish()
+
+        }
+        ui.menuGraph.setOnClickListener(){
+            Log.d(TAG, "click graph")
+            val intent = Intent(this, activity_graph::class.java)
             changeView.saveOnChange(intent)
             startActivity(intent)
             this.overridePendingTransition(0, 0);
@@ -88,12 +91,12 @@ class activity_settings : AppCompatActivity() {
 
 
     fun menuOpen(){
-        menuOpen = true
+        data.menuOpen = true
         ui.smallMenu.setBackgroundResource(R.drawable.longmenu);
         showIcos()
     }
     fun menuHidden(){
-        menuOpen = false
+        data.menuOpen = false
         ui.smallMenu.setBackgroundResource(R.drawable.smallmenu);
         hideIcos()
         ui.menuLines.setVisibility(View.VISIBLE)

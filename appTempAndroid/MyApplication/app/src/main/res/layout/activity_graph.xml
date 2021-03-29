@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
+    tools:context=".activity_graph">
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/menuLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="74dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/smallMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/smallmenu" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/menuLines"
+        android:layout_width="wrap_content"
+        android:layout_height="74dp"
+        android:layout_marginLeft="7dp"
+        android:src="@drawable/group_11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/menuMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="74dp"
+        app:layout_constraintEnd_toStartOf="@+id/menuGraph"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pen_black_diagonal_symbol_of_writing_tool_icon_icons_com_54470" />
+
+    <ImageView
+        android:id="@+id/menuSettings"
+        android:layout_width="59dp"
+        android:layout_height="72dp"
+        app:layout_constraintEnd_toStartOf="@+id/menuHide"
+
+        app:layout_constraintStart_toEndOf="@+id/menuHome"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/settings_cogwheel_button_icon_icons_com_72559" />
+
+    <ImageView
+        android:id="@+id/menuHide"
+        android:layout_width="66dp"
+        android:layout_height="84dp"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toEndOf="@+id/menuSettings"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/asset1" />
+
+    <ImageView
+        android:id="@+id/menuHome"
+        android:layout_width="wrap_content"
+        android:layout_height="74dp"
+        app:layout_constraintEnd_toStartOf="@+id/menuSettings"
+        app:layout_constraintStart_toEndOf="@+id/menuGraph"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/home_button_icon_icons_com_72700" />
+
+    <ImageView
+        android:id="@+id/menuGraph"
+        android:layout_width="wrap_content"
+        android:layout_height="74dp"
+        app:layout_constraintEnd_toStartOf="@+id/menuHome"
+        app:layout_constraintStart_toEndOf="@+id/menuMessage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/path_15" />
+
+    <com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
+        android:id="@+id/aa_chart_view"
+        android:layout_width="0dp"
+        android:layout_height="500dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.github.aachartmodel.aainfographics.aachartcreator.AAChartView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</ScrollView>

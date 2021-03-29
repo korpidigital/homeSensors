@@ -2,9 +2,7 @@ package com.example.tempapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.RelativeLayout
-import android.widget.TextView
+
 
 
 public class Sensors {
@@ -24,30 +22,46 @@ public class Sensors {
 }
 val sensor = Sensors()
 
+public class dataArray{
+
+    val humArray = arrayListOf<Long>()
+    val tempArray = arrayListOf<Long>()
+    val dateArray = arrayListOf<String>()
+    val humArray2 = arrayListOf<Long>()
+    val tempArray2 = arrayListOf<Long>()
+    val dateArray2 = arrayListOf<String>()
+    var menuOpen: Boolean = false
+
+}
+val data = dataArray()
+
 public class changeActivity {
     fun saveOnChange(intent: Intent){
         intent.putExtra("menuOpen", true)
+        /*
         intent.putExtra("temp1", sensor.t1)
         intent.putExtra("hum1", sensor.h1)
         intent.putExtra("time", sensor.measuredTime)
         intent.putExtra("date", sensor.measuredDate)
         intent.putExtra("name1", sensor.name1)
-        intent.putExtra("name2", sensor.name2)
+        intent.putExtra("name2", sensor.name2)*/
+
     }
     fun loadSaved(bundle: Bundle){
+        /*
         sensor.t1 = bundle.getLong("temp1")
         sensor.h1 = bundle.getLong("hum1")
         sensor.measuredTime =  bundle.getString("time")
         sensor.measuredDate =  bundle.getString("date")
         sensor.name1 =  bundle.getString("name1")
-        sensor.name1 =  bundle.getString("name2")
+        sensor.name1 =  bundle.getString("name2")*/
+
+
     }
 }
 val changeView = changeActivity()
 
-class uiFunction(){
 
-}
 
 
 

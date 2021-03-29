@@ -1,24 +1,21 @@
 package com.example.tempapp
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.view.ViewGroup
-import android.view.ViewGroup.MarginLayoutParams
 import androidx.appcompat.app.AppCompatActivity
 import com.example.tempapp.databinding.ActivityMainBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import java.util.*
 
 
 class MainActivity : AppCompatActivity(){
 
     private val TAG = "MyActivity"
-    var menuOpen: Boolean = false
 
     private lateinit var ui: ActivityMainBinding
 
@@ -50,16 +47,8 @@ class MainActivity : AppCompatActivity(){
 
 
 
-        //Load previous state
-        val bundle=intent.extras
-        if(bundle!=null)
-        {
-            menuOpen = bundle.getBoolean("menuOpen")
-            changeView.loadSaved(bundle)
-            ui.temp1.text = sensor.t1.toString()+" °C"
-            ui.hum1.text = sensor.h1.toString()+" %"
-        }
-        if (menuOpen){
+
+        if (data.menuOpen){
             menuOpened()
         }
         else{
@@ -87,6 +76,7 @@ class MainActivity : AppCompatActivity(){
             menuHidden()
 
         }
+        //refArduino.setValue("OFF");
         ui.menuSettings.setOnClickListener(){
             Log.d(TAG, "click settings")
             val intent = Intent(this, activity_settings::class.java)
@@ -96,17 +86,68 @@ class MainActivity : AppCompatActivity(){
             finish()
 
         }
-        //refArduino.setValue("OFF");
+        ui.menuGraph.setOnClickListener(){
+            Log.d(TAG, "click graph")
+            val intent = Intent(this, activity_graph::class.java)
+            changeView.saveOnChange(intent)
+            startActivity(intent)
+            this.overridePendingTransition(0, 0);
+            finish()
+
+        }
         ref.child("Room1/Mode").setValue("OFF");
         ref.child("Room2/Mode").setValue("OFF");
 
 
     }
+
     fun fetchFirebase(dataSnapshot: DataSnapshot){
-        sensor.t1 = dataSnapshot.child("Room1/Temp").getValue() as Long
-        sensor.h1 =  dataSnapshot.child("Room1/Hum").getValue() as Long
-        sensor.t2 = dataSnapshot.child("Room2/Temp").getValue() as Long
-        sensor.h2 =  dataSnapshot.child("Room2/Hum").getValue() as Long
+        //sensor.t1 = dataSnapshot.child("Room1/Temp").getChildren().last().getValue() as Long
+        //sensor.h1 =  dataSnapshot.child("Room1/Hum").getChildren().last().getValue() as Long
+        data.tempArray.clear()
+        data.humArray.clear()
+        data.dateArray.clear()
+        data.tempArray2.clear()
+        data.humArray2.clear()
+        data.dateArray2.clear()
+        for (item_snapshot in dataSnapshot.child("Room1").children) {
+            var key = item_snapshot.key.toString()
+            var value = item_snapshot.value
+            if (key.contains("Temp")){
+                data.tempArray.add(value as Long)
+            }
+            if (key.contains("Hum")){
+                data.humArray.add(value as Long)
+                var strDate: String = key.replace("_Hum", "")
+                data.dateArray.add(strDate)
+            }
+        }
+        for (item_snapshot in dataSnapshot.child("Room2").children) {
+            var key = item_snapshot.key.toString()
+            var value = item_snapshot.value
+            if (key.contains("Temp")){
+                data.tempArray2.add(value as Long)
+            }
+            if (key.contains("Hum")){
+                data.humArray2.add(value as Long)
+                var strDate: String = key.replace("_Hum", "")
+                data.dateArray2.add(strDate)
+            }
+        }
+        Log.d(TAG, sensor.name1.toString())
+        Log.d(TAG, sensor.name2.toString())
+
+
+
+        var newTemp = data.tempArray.last()
+        var newHum = data.humArray.last()
+        var newTemp2 = data.tempArray2.last()
+        var newHum2= data.humArray2.last()
+
+        sensor.t1 = newTemp as Long
+        sensor.h1 =  newHum as Long
+        sensor.t2 = newTemp2 as Long
+        sensor.h2 =  newHum2 as Long
         sensor.name1 = dataSnapshot.child("Room1/Name").getValue() as String
         sensor.name2 = dataSnapshot.child("Room2/Name").getValue() as String
 
@@ -181,7 +222,7 @@ class MainActivity : AppCompatActivity(){
         Log.i(TAG, "onRestoreInstanceState")
     }
     fun menuHidden(){
-        menuOpen = false
+        data.menuOpen = false
         ui.smallMenu.setBackgroundResource(R.drawable.smallmenu);
 
         hideIcos()
@@ -190,7 +231,7 @@ class MainActivity : AppCompatActivity(){
     }
     fun menuOpened(){
         showIcos()
-        menuOpen = true
+        data.menuOpen = true
         ui.smallMenu.setBackgroundResource(R.drawable.longmenu);
 
         ui.title1.setVisibility(View.INVISIBLE)

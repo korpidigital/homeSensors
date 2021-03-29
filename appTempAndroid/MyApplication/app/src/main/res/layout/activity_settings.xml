@@ -1,271 +1,300 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
-    tools:context=".activity_settings">
+    android:background="@color/black">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="74dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/smallMenu"
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:src="@drawable/smallmenu" />
+            android:layout_height="74dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/smallMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/smallmenu" />
+        </RelativeLayout>
+
 
         <ImageView
             android:id="@+id/menuLines"
             android:layout_width="wrap_content"
             android:layout_height="74dp"
             android:layout_marginLeft="7dp"
-            android:src="@drawable/group_11" />
+            android:src="@drawable/group_11"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/menuMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="74dp"
+            app:layout_constraintEnd_toStartOf="@+id/menuGraph"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/pen_black_diagonal_symbol_of_writing_tool_icon_icons_com_54470" />
+
+        <ImageView
+            android:id="@+id/menuSettings"
+            android:layout_width="59dp"
+            android:layout_height="72dp"
+            app:layout_constraintEnd_toStartOf="@+id/menuHide"
+
+            app:layout_constraintStart_toEndOf="@+id/menuHome"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/settings_cogwheel_button_icon_icons_com_72559" />
 
         <ImageView
             android:id="@+id/menuHide"
-            android:layout_width="wrap_content"
-            android:layout_height="74dp"
-            android:layout_marginLeft="330dp"
+            android:layout_width="66dp"
+            android:layout_height="84dp"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toEndOf="@+id/menuSettings"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/asset1" />
 
         <ImageView
             android:id="@+id/menuHome"
             android:layout_width="wrap_content"
             android:layout_height="74dp"
-            android:layout_marginLeft="250dp"
+            app:layout_constraintEnd_toStartOf="@+id/menuSettings"
+            app:layout_constraintStart_toEndOf="@+id/menuGraph"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/home_button_icon_icons_com_72700" />
-
-        <ImageView
-            android:id="@+id/menuMessage"
-            android:layout_width="wrap_content"
-            android:layout_height="74dp"
-            android:layout_marginLeft="170dp"
-            app:srcCompat="@drawable/pen_black_diagonal_symbol_of_writing_tool_icon_icons_com_54470" />
-
-        <ImageView
-            android:id="@+id/menuSettings"
-            android:layout_width="wrap_content"
-            android:layout_height="74dp"
-            android:layout_marginLeft="90dp"
-            app:srcCompat="@drawable/settings_cogwheel_button_icon_icons_com_72559" />
 
         <ImageView
             android:id="@+id/menuGraph"
             android:layout_width="wrap_content"
             android:layout_height="74dp"
-            android:layout_marginLeft="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/menuHome"
+            app:layout_constraintStart_toEndOf="@+id/menuMessage"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/path_15" />
-        />
-    </RelativeLayout>
 
 
     <TextView
         android:id="@+id/titleSettings"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/bungee"
         android:gravity="center"
+        android:includeFontPadding="false"
         android:text="SETTINGS"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="60dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/settingRoom1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/bungee_hairline"
-            android:gravity="center"
-            android:text="ROOM1"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:paddingTop="150dp"
-            android:paddingLeft="30dp"
-            >
-        </TextView>
-        <TextView
-            android:id="@+id/settingName1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/bungee_hairline"
-            android:gravity="center"
-            android:text="NAME"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:paddingTop="185dp"
-            android:paddingLeft="77dp"
-            >
-        </TextView>
-        <EditText
-            android:id="@+id/settingsInput1"
-            android:textSize="20sp"
-            android:layout_width="200dp"
-            android:layout_height="35dp"
-            android:text="ROOM1"
-            android:textStyle="bold"
-            android:fontFamily="@font/bungee_hairline"
-            android:background="@drawable/my_border2"
-            android:layout_marginTop="180dp"
-            android:layout_marginLeft="150dp"
-            android:paddingLeft="10dp"
-            android:gravity="center_vertical"
-            android:singleLine="true"
-            android:maxLength="10"
-
-
-            />
-        <TextView
-            android:id="@+id/settingRoom2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/bungee_hairline"
-            android:gravity="center"
-            android:text="ROOM2"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:paddingTop="215dp"
-            android:paddingLeft="30dp"
-            >
-        </TextView>
-        <TextView
-            android:id="@+id/settingName2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/bungee_hairline"
-            android:gravity="center"
-            android:text="NAME"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:paddingTop="250dp"
-            android:paddingLeft="77dp"
-            >
-        </TextView>
-        <EditText
-            android:id="@+id/settingsInput2"
-            android:textSize="20sp"
-            android:layout_width="200dp"
-            android:layout_height="35dp"
-            android:text="ROOM2"
-            android:textStyle="bold"
-            android:fontFamily="@font/bungee_hairline"
-            android:background="@drawable/my_border2"
-            android:layout_marginTop="245dp"
-            android:layout_marginLeft="150dp"
-            android:paddingLeft="10dp"
-            android:gravity="center_vertical"
-            android:singleLine="true"
-            android:maxLength="10"
-
-
-            />
-        <TextView
-            android:id="@+id/settingRoom3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/bungee_hairline"
-            android:gravity="center"
-            android:text="ROOM3"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:paddingTop="280dp"
-            android:paddingLeft="30dp"
-            >
-        </TextView>
-        <TextView
-            android:id="@+id/settingName3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/bungee_hairline"
-            android:gravity="center"
-            android:text="NAME"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:paddingTop="315dp"
-            android:paddingLeft="77dp"
-            >
-        </TextView>
-        <EditText
-            android:id="@+id/settingsInput3"
-            android:textSize="20sp"
-            android:layout_width="200dp"
-            android:layout_height="35dp"
-            android:text="ROOM3"
-            android:textStyle="bold"
-            android:fontFamily="@font/bungee_hairline"
-            android:background="@drawable/my_border2"
-            android:layout_marginTop="310dp"
-            android:layout_marginLeft="150dp"
-            android:paddingLeft="10dp"
-            android:gravity="center_vertical"
-            android:singleLine="true"
-            android:maxLength="10"
-            />
-
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
     <TextView
+        android:includeFontPadding="false"
+        android:id="@+id/settingRoom1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="250dp"
+        android:fontFamily="@font/bungee_hairline"
+        android:gravity="center"
+        android:text="ROOM1"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleSettings" />
+
+    <TextView
+        android:includeFontPadding="false"
+        android:id="@+id/settingName1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:fontFamily="@font/bungee_hairline"
+        android:gravity="center"
+        android:text="NAME"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/settingsInput1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingRoom1" />
+
+    <EditText
+        android:includeFontPadding="false"
+        android:id="@+id/settingsInput1"
+        android:layout_width="207dp"
+        android:layout_height="29dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/my_border2"
+        android:fontFamily="@font/bungee_hairline"
+        android:gravity="center_vertical"
+        android:maxLength="10"
+        android:singleLine="true"
+        android:text="ROOM1"
+
+
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/settingName1"
+        app:layout_constraintTop_toBottomOf="@+id/settingRoom1" />
+
+    <TextView
+        android:includeFontPadding="false"
+        android:id="@+id/settingRoom2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="250dp"
+        android:fontFamily="@font/bungee_hairline"
+        android:gravity="center"
+        android:text="ROOM2"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingName1" />
+
+    <TextView
+        android:includeFontPadding="false"
+        android:id="@+id/settingName2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:fontFamily="@font/bungee_hairline"
+        android:gravity="center"
+        android:text="NAME"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/settingsInput2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingRoom2" />
+
+    <EditText
+        android:includeFontPadding="false"
+        android:id="@+id/settingsInput2"
+        android:layout_width="207dp"
+        android:layout_height="29dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/my_border2"
+        android:fontFamily="@font/bungee_hairline"
+        android:gravity="center_vertical"
+        android:maxLength="10"
+        android:singleLine="true"
+        android:text="ROOM2"
+
+
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/settingName2"
+        app:layout_constraintTop_toBottomOf="@+id/settingRoom2" />
+
+    <TextView
+        android:includeFontPadding="false"
+        android:id="@+id/settingRoom3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="250dp"
+        android:fontFamily="@font/bungee_hairline"
+        android:gravity="center"
+        android:text="ROOM3"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingName2" />
+
+    <TextView
+        android:includeFontPadding="false"
+        android:id="@+id/settingName3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:fontFamily="@font/bungee_hairline"
+        android:gravity="center"
+        android:text="NAME"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/settingsInput3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingRoom3" />
+
+    <EditText
+        android:includeFontPadding="false"
+        android:id="@+id/settingsInput3"
+        android:layout_width="207dp"
+        android:layout_height="29dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/my_border2"
+        android:fontFamily="@font/bungee_hairline"
+        android:gravity="center_vertical"
+        android:maxLength="10"
+        android:singleLine="true"
+        android:text="ROOM1"
+
+
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/settingName3"
+        app:layout_constraintTop_toBottomOf="@+id/settingRoom3" />
+
+
+    <TextView
+        android:includeFontPadding="false"
         android:id="@+id/settingsTxt"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/bungee_hairline"
         android:gravity="center"
         android:text="AUTOMATICALLY\nFETCH SENSOR\nDATA AT:"
-        android:textStyle="bold"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="30sp"
-        android:paddingTop="380dp"
-        >
-    </TextView>
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingsInput3" />
+
     <EditText
+        android:includeFontPadding="false"
         android:id="@+id/settingsInputTime"
-        android:textSize="20sp"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:text="07:00"
-        android:textStyle="bold"
-        android:fontFamily="@font/bungee_hairline"
         android:background="@drawable/my_border2"
-        android:paddingLeft="17dp"
+        android:fontFamily="@font/bungee_hairline"
         android:gravity="center_vertical"
-        android:singleLine="true"
         android:maxLength="5"
-        android:layout_marginTop="500dp"
-        android:layout_marginLeft="160dp"
-        />
-    </RelativeLayout>
+        android:singleLine="true"
+        android:text="07:00"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingsTxt" />
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
